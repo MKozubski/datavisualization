@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+.container{
+  border: 1px solid black;
+  width: 525px;
+  height: 390px;
+  margin: 0px auto;
+  margin-top: 10px;
+}
+
+.map{
+  border: 1px solid black;
+  width: 505px;
+  height: 305px;
+  margin: 0px auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.control{
+  border: 1px solid black;
+  width: 505px;
+  height: 50px;
+  margin: 0px auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

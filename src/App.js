@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import "./App.css";
+import React, { useState, useEffect } from "react";
+import Map from "./Components/Deck/Maps/DeckMap";
+import BathymetryData from "./Components/Deck/Maps/gpx";
+import 'leaflet/dist/leaflet.css';
+const App = () => {
+const [view ,setView ] = useState(<div><h1>Data Visualization Testing</h1></div>);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+        <div className="container">
+
+            <div className="map">
+                {view}
+            </div>
+            <div className="control">
+                <button onClick={() => setView(<Map />)}>Deck Sample</button>
+                <button onClick={() => setView(<BathymetryData /> )}>GPX Viewer</button>
+            </div>
+        </div>
     </div>
   );
-}
+};
 
 export default App;
