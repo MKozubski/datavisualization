@@ -3,8 +3,6 @@ import gpxdata from "./Track_02-AUG-13.gpx";
 import gpxParser from "gpxparser";
 import { MapContainer, TileLayer, Polyline } from "react-leaflet";
 import 'leaflet/dist/leaflet.css';
-import logo from "./logo.png";
-import L from "leaflet";
 import bath from "./CCIN11892_20150811_GPS_Track_Bathymetry_20130802_Cambridge_Bay.gpx";
 
 const PolyLineMap = () => {
@@ -33,26 +31,26 @@ const PolyLineMap = () => {
   if (!geoJSON) {
     return null;
   }
+  console.log(geoJSON.slice(0,-1));
   const limeOptions = { color: 'lime' }
   return (
-    <MapContainer
-    style={{ height: "300px", width: "500px", zIndex: 0, position: "relative" }}
-      center={[51.0, 19.0]}
-      zoom={4}
-      maxZoom={18}
-    >
-      <TileLayer
-        url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
-      />
-
-
-      {geoJSON.map((content, index) => (
-        <Polyline pathOptions={limeOptions} positions={[content[1], content[0]]} />
-
-        ))}
-
+    geoJSON !== null ? ( <MapContainer
+        style={{ height: "300px", width: "500px", zIndex: 0, position: "relative" }}
+          center={[51.0, 19.0]}
+          zoom={4}
+          maxZoom={18}
+        >
+          <TileLayer
+            url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
+          />
     
-    </MapContainer>
+    
+          {geoJSON.map((content, index) => (
+            <Polyline pathOptions={limeOptions} positions={geoJSON[1].slice(0,-1)} key={index} />
+    
+            ))}
+        </MapContainer>) : (<>Loading...</>)
+
   );
 };
 
