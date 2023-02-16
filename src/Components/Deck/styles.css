@@ -1,0 +1,15 @@
+.attribution {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  font: 12px Helvetica Neue, Arial, Helvetica, sans-serif;
+  line-height: 12px;
+  padding: 4px;
+  z-index: 9;
+}
+
+.map{
+  max-width: 501px;
+  max-height: 301px; 
+}
