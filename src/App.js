@@ -4,6 +4,8 @@ import Map from "./Components/Deck/DeckMap";
 import BathymetryData from "./Components/Cluster/gpx.js";
 import "leaflet/dist/leaflet.css";
 import PolyLineMap from "./Components/Polyline/PolylineMap";
+import baloons from "./balloons.tif";
+import LineChart from "./Components/Charts/Line/Line";
 
 const App = () => {
   const [view, setView] = useState(
@@ -13,6 +15,7 @@ const App = () => {
   );
   return (
     <div className="App">
+      <img src={baloons} alt="baloons" />
       <div className="container">
         <div className="map">{view}</div>
         <div className="control">
@@ -22,6 +25,9 @@ const App = () => {
           </button>
           <button onClick={() => setView(<PolyLineMap />)}>
             PolyLine Test
+          </button>
+          <button onClick={() => setView(<LineChart />)}>
+            Line Chart
           </button>
         </div>
       </div>
