@@ -5,7 +5,7 @@ import BathymetryData from "./Components/Cluster/gpx.js";
 import "leaflet/dist/leaflet.css";
 import PolyLineMap from "./Components/Polyline/PolylineMap";
 import baloons from "./balloons.tif";
-import LineChart from "./Components/Charts/Line/Line";
+import TableData from "./Components/Charts/Line/Line";
 
 const App = () => {
   const [view, setView] = useState(
@@ -26,8 +26,8 @@ const App = () => {
           <button onClick={() => setView(<PolyLineMap />)}>
             PolyLine Test
           </button>
-          <button onClick={() => setView(<LineChart />)}>
-            Line Chart
+          <button onClick={() => setView(<TableData  />)}>
+           Table Data
           </button>
         </div>
       </div>
